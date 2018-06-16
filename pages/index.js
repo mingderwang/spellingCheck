@@ -1,4 +1,4 @@
-import Hello from './spellingCheck'
+import SpellingCheck from './spellingCheck'
 export default () => (
- <Hello initialName="World"/>
+ <SpellingCheck initialName="World"/>
 )

@@ -38,7 +38,7 @@ class Hello extends React.Component {
             if (body === '{"_type": "SpellCheck", "flaggedTokens": []}')
             result = {result: '完全正確'}
             else
-            result = { result: body }
+            result = { result: body._type }
             setResult(result);
         });
         response.on ('error', function (e) {
@@ -64,6 +64,7 @@ let request_params = {
 
     let req = https.request (request_params, response_handler);
     req.write ("text=" + text);
+    this.setState({result: '檢查中...'})
     req.end();
   }
   render() {
