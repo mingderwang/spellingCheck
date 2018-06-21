@@ -36,7 +36,7 @@ class Hello extends React.Component {
             console.log (body);
             let result;
             if (body === '{"_type": "SpellCheck", "flaggedTokens": []}')
-            result = {result: '完全正確'}
+            result = {result: '拼字正確, 或有錯誤, 但無任何拼字建議'}
             else
             result = { result: body._type }
             setResult(result);
