@@ -1,5 +1,6 @@
 # 檔案內容
 
+```
 ╰─$ tree -I node_modules
 .
 ├── package-lock.json
@@ -9,6 +10,7 @@
 │   ├── index.js
 │   └── spellingCheck.js
 └── yarn.lock
+```
 
 # 說明
 
