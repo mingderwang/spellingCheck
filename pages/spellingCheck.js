@@ -6,7 +6,7 @@ let host = 'api.cognitive.microsoft.com';
 let path = '/bing/v7.0/spellcheck';
 
 /* NOTE: Replace this example key with a valid subscription key (see the Prequisites section above). Also note v5 and v7 require separate subscription keys. */
-let key = '8e374bbd9f6f4ffaaccc8072003fc155';
+let key = 'd258a1c433e047d39bedd72d224d0a8e';
 
 class Hello extends React.Component {
   constructor(props) {
@@ -24,7 +24,7 @@ class Hello extends React.Component {
 
   onBlur(e) {
     console.log(e.target.value)
-    let setResult = (result) =>
+    const setResult = (result) =>
       this.setState(result);
       
     let response_handler = function (response) {
@@ -36,9 +36,14 @@ class Hello extends React.Component {
             console.log (body);
             let result;
             if (body === '{"_type": "SpellCheck", "flaggedTokens": []}')
+      {
             result = {result: '拼字正確, 或有錯誤, 但無任何拼字建議'}
+      }
             else
-            result = { result: body._type }
+      {
+            result = { result: JSON.stringify(body) }
+      }
+        console.log(result)
             setResult(result);
         });
         response.on ('error', function (e) {
